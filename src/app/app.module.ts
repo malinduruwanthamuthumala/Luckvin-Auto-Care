@@ -15,7 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { AgmCoreModule } from '@agm/core';
+import { MapcomponentComponent } from './mapcomponent/mapcomponent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    HomepageComponent
+    HomepageComponent,
+    MapcomponentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDIr_1mumk0EcpdtP_hT0UCMVTX4b7xy0s'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
