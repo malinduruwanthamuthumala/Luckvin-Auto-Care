@@ -17,6 +17,12 @@ import { HomeModule } from './home/home.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapcomponentComponent } from './mapcomponent/mapcomponent.component';
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +41,9 @@ import { MapcomponentComponent } from './mapcomponent/mapcomponent.component';
     RouterModule,
     AppRoutingModule,
     HomeModule,
+    AngularFireModule.initializeApp(environment.config),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDIr_1mumk0EcpdtP_hT0UCMVTX4b7xy0s'
     })
