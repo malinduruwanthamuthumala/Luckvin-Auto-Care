@@ -11,6 +11,12 @@ import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+// import { AuthGuard } from "../../shared/guard/auth.guard";
+
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -20,7 +26,15 @@ const routes: Routes =[
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: '', redirectTo: 'homepage', pathMatch: 'full' }
+    { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+    
+    { path: 'sign-in', component: SignInComponent },
+    { path: 'register-user', component: SignUpComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'forgot-password', component: ForgotPasswordComponent },
+    
+ 
+   
 ];
 
 @NgModule({
@@ -30,6 +44,7 @@ const routes: Routes =[
     RouterModule.forRoot(routes)
   ],
   exports: [
+    RouterModule,
   ],
 })
 export class AppRoutingModule { }
